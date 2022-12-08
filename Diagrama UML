@@ -22,6 +22,11 @@ class Aeroporto{
   +String nomeEstado
 }
 
+class Torre{
+  +Boolean vooPermitido
+  verificarCondicoes()
+}
+
 class Aviao{
   +String cargaMax
   +String modelo
@@ -39,6 +44,7 @@ class Carga{
 Pessoa <|-- Passageiro
 Pessoa <|-- Piloto
 Aviao o-- Carga
+Aeroporto *-- Torre
 Voo *-- Pessoa
 Voo *-- Aeroporto
 Voo *-- Aviao
