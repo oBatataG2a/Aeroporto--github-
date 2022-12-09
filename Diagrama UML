@@ -62,7 +62,7 @@ Pessoa <|-- Piloto
 Aviao o-- Carga
 Aeroporto *-- Torre
 Passageiro o-- Ticket
-Voo *-- Pessoa
+Voo o-- Pessoa
 Voo *-- Aeroporto
 Voo *-- Aviao
 Aeroporto *-- Funcionamento
