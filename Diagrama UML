@@ -8,11 +8,13 @@ class Pessoa{
 }
 
 class Passageiro{
-  +Ticket ticket
+  +Pessoa pessoa
+  +String passaporte
 }
 
 class Ticket{
-  +Dictionaries tickets
+  +String ticket
+  +List tickets
   verificarTicket()
 }
 
@@ -37,12 +39,22 @@ class Aviao{
 }
 
 class Voo{
-  +Aeroporto aeroporto
+  +String name
+  +String assento
+  +Integer valor
+  getStatus()
+  precoInfo()
+  reservarTicket()
 }
 
 class Carga{
   +String qtdItem
   levarCarga()
+}
+
+class Funcionamento{
+  +String Date
+  verificarFuncionamento()
 }
 
 Pessoa <|-- Passageiro
@@ -53,5 +65,6 @@ Passageiro o-- Ticket
 Voo *-- Pessoa
 Voo *-- Aeroporto
 Voo *-- Aviao
+Aeroporto *-- Funcionamento
 
 @enduml
