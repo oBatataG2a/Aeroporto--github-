@@ -1,0 +1,52 @@
+@startuml
+
+title Companhia Aeroporto - Class Diagram
+
+class Pessoa{
+  +String nome
+  +String cpf
+}
+
+class Passageiro{
+  +String ticket
+  verificarTicket()
+}
+
+class Piloto{
+  +String brevete
+}
+
+class Aeroporto{
+  +String nomeAeroporto
+  +String nomeCidade
+  +String nomeEstado
+}
+
+class Torre{
+  +Boolean vooPermitido
+  verificarCondicoes()
+}
+
+class Aviao{
+  +String cargaMax
+  +String modelo
+}
+
+class Voo{
+  +
+}
+
+class Carga{
+  +String qtdItem
+  levarCarga()
+}
+
+Pessoa <|-- Passageiro
+Pessoa <|-- Piloto
+Aviao o-- Carga
+Aeroporto *-- Torre
+Voo *-- Pessoa
+Voo *-- Aeroporto
+Voo *-- Aviao
+
+@enduml
