@@ -4,6 +4,7 @@ def run():
     print("Dados do aviao")
     boeing = Aviao(modelo="Boeing 747", cargaMax="78")
     print(boeing)
+    print("")
 
 if __name__ == "__main__":
     run()

@@ -1,1 +1,1 @@
-__all__ = ['pessoa', 'aviao', 'aeroporto', 'piloto', 'passageiro']
+__all__ = ['pessoa', 'aviao', 'aeroporto', 'piloto', 'passageiro', 'torreControle', 'ticket', 'carga']
