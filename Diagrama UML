@@ -8,7 +8,11 @@ class Pessoa{
 }
 
 class Passageiro{
-  +String ticket
+  +Ticket ticket
+}
+
+class Ticket{
+  +Dictionaries tickets
   verificarTicket()
 }
 
@@ -33,7 +37,7 @@ class Aviao{
 }
 
 class Voo{
-  +
+  +Aeroporto aeroporto
 }
 
 class Carga{
@@ -45,6 +49,7 @@ Pessoa <|-- Passageiro
 Pessoa <|-- Piloto
 Aviao o-- Carga
 Aeroporto *-- Torre
+Passageiro o-- Ticket
 Voo *-- Pessoa
 Voo *-- Aeroporto
 Voo *-- Aviao
