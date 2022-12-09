@@ -1,25 +1,20 @@
-import sys, os
+class Voo:
+    def __init__(self, name="", valor="", assentos=0):
+        self.name = name
+        self.valor = valor
+        self.ass = assentos
 
-from classes.torreControle import TorreControle
-from classes.aeroporto import Aeroporto
+    def getStatus(self):
+        return f" O voo {self.name}\n Possui {self.ass} assentos disponiveis"
 
-class Voo(TorreControle, Aeroporto):
-    def __init__(self, vooPermitido="", nome=""):
-        super().__init__(vooPermitido, nome)
+    def precoInfo(self):
+        return f"O preço por ticket é de: {self.valor}"
 
-    # Disable Print
-    def blockPrint():
-        sys.stdout = open(os.devnull, 'w')
-
-    # Restore Print
-    def enablePrint():
-        sys.stdout = sys.__stdout__
-
-    def interromper(self):
-        if self.vooPermitido == False:
-            return self.blockPrint()
+    def reservarTicket(self):
+        if (self.ass>0):
+            return f"O seu ticket foi reservado! O número do seu assento é o: {self.ass}", self.ass -1
         else:
-            return self.enablePrint()
+            return f"Tá lotado, piá"
 
     def __str__(self):
-        return f"O voo se iniciará do aeroporto"
+        return f"{self.getStatus()}\n {self.reservarTicket()}\n {self.precoInfo()}"
